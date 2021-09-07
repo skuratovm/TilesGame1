@@ -6,6 +6,19 @@
 //
 
 import UIKit
+import AudioToolbox
+
+extension UIButton {
+
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+//animation.timingFunction = CAMediaTimingFunction
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+
+}
 
 //block of code to upgrade View Inspector
 
@@ -42,7 +55,9 @@ import UIKit
 }
 
 class ViewController: UIViewController {
+    
    lazy var game = GameLogic(numberOfPairs: buttonCollection.count + 1 / 2)
+    
     
   
     
@@ -50,7 +65,10 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+              // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        
        
     }
     var touches = 0{
@@ -134,19 +152,19 @@ class ViewController: UIViewController {
    
 
     func updeteViewFromModel(){
+        
+            
         for index in buttonCollection.indices{
             let button = buttonCollection[index]
             let card = game.cards[index]
             if card.isFaceUp {
+                
                 button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-                                    button.layer.cornerRadius = 10
+                button.layer.cornerRadius = 10
                 let seconds = 0.2
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds ) {
                     
-                    
-                    
-                    
-                    
+                
                     button.setTitle(self.emojiID(for: card), for: .normal)
 
                 }
@@ -156,6 +174,8 @@ class ViewController: UIViewController {
             } else{
                 button.layer.cornerRadius = 10
                 button.setTitle("", for: .normal)
+                button.borderWidth = 0.5
+                button.borderColor = #colorLiteral(red: 0.2471399903, green: 0.3659403324, blue: 0.3792953789, alpha: 1)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
                 
             }
@@ -169,9 +189,16 @@ class ViewController: UIViewController {
     
     
    
+    @IBAction func helpButtonAction(_ sender: UIButton) {
+        
+        game.openAll()
+    }
     
     @IBAction func buttonAction(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(1519)//(SystemSoundID(kSystemSoundID_Vibrate))
         touches += 1
+        
+        
         if touches >= 1 && touches < 49{
             touchLabel.textColor = #colorLiteral(red: 1, green: 0, blue: 0.9928097129, alpha: 1)
         }

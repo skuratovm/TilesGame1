@@ -33,6 +33,12 @@ class GameLogic {
         
     }
     
+    func openAll(){
+        for i in cards.indices{
+            cards[i].isFaceUp = true
+        }
+    }
+    
     func resetGame(){
         
         for i in cards.indices{
