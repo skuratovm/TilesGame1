@@ -38,7 +38,7 @@ class GameLogic {
         for i in cards.indices{
             cards[i].isFaceUp = false
             cards[i].isMatched = false
-            cards[i].identifier = 0
+           cards[i].identifier = 0
             cards[i].identifier = Int(arc4random_uniform(12))
             
             

@@ -100,7 +100,35 @@ class ViewController: UIViewController {
         touchLabel.text = "Touches: 0"
         touchLabel.textColor = #colorLiteral(red: 0.6364808083, green: 0.3616332412, blue: 0.9602059722, alpha: 1)
         touchLabel.text = "Tap any tile to start!"
-       
+        
+        let blurEffect = UIBlurEffect(style: .light)
+         let blurVisualEffectView = UIVisualEffectView(effect: blurEffect)
+         blurVisualEffectView.frame = view.bounds
+
+//        let alertController = UIAlertController.init(title: "Title", message: "Message", preferredStyle: .alert)
+//
+//        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+//             print("Handle Ok logic here")
+//             blurVisualEffectView.removeFromSuperview()
+//         }))
+//
+//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+//             print("Handle Cancel Logic here")
+             //blurVisualEffectView.removeFromSuperview()
+//         }))
+        
+        UIView.animate(withDuration: 1.0) {
+            blurVisualEffectView.frame = CGRect(x: 185, y: 350, width: 50, height: 50)
+        }
+         self.view.addSubview(blurVisualEffectView)
+        //self.present(alertController, animated: true, completion: nil)
+        
+        let seconds = 1.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            
+            blurVisualEffectView.removeFromSuperview()
+        }
+//
     }
     
    
@@ -110,9 +138,20 @@ class ViewController: UIViewController {
             let button = buttonCollection[index]
             let card = game.cards[index]
             if card.isFaceUp {
-                button.setTitle(emojiID(for: card), for: .normal)
                 button.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-                button.layer.cornerRadius = 10
+                                    button.layer.cornerRadius = 10
+                let seconds = 0.2
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds ) {
+                    
+                    
+                    
+                    
+                    
+                    button.setTitle(self.emojiID(for: card), for: .normal)
+
+                }
+              
+                
                 
             } else{
                 button.layer.cornerRadius = 10
