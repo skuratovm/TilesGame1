@@ -33,8 +33,23 @@ class GameLogic {
         
     }
     
+    func resetGame(){
+        
+        for i in cards.indices{
+            cards[i].isFaceUp = false
+            cards[i].isMatched = false
+            cards[i].identifier = 0
+            cards[i].identifier = Int(arc4random_uniform(12))
+            
+            
+            
+            
+        }
+        
+    }
+    
     init(numberOfPairs: Int){
-        for _ in stride(from: 1, to: numberOfPairs,by: 2){
+        for _ in stride(from: 1, to: numberOfPairs,by: 1){
             let card = Card()
             cards.append(card)
             cards.append(card)

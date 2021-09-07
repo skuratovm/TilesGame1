@@ -7,6 +7,40 @@
 
 import UIKit
 
+//block of code to upgrade View Inspector
+
+@IBDesignable extension UIButton {
+
+    @IBInspectable var borderWidth: CGFloat {
+        set {
+            layer.borderWidth = newValue
+        }
+        get {
+            return layer.borderWidth
+        }
+    }
+
+    @IBInspectable var cornerRadius: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+
+    @IBInspectable var borderColor: UIColor? {
+        set {
+            guard let uiColor = newValue else { return }
+            layer.borderColor = uiColor.cgColor
+        }
+        get {
+            guard let color = layer.borderColor else { return nil }
+            return UIColor(cgColor: color)
+        }
+    }
+}
+
 class ViewController: UIViewController {
    lazy var game = GameLogic(numberOfPairs: buttonCollection.count + 1 / 2)
     
@@ -59,6 +93,17 @@ class ViewController: UIViewController {
         return emojiDictionary[card.identifier] ?? "?"
     }
     
+    
+    @IBAction func resetButton(_ sender: UIButton) {
+        game.resetGame()
+        touches = 0
+        touchLabel.text = "Touches: 0"
+        touchLabel.textColor = #colorLiteral(red: 0.6364808083, green: 0.3616332412, blue: 0.9602059722, alpha: 1)
+        touchLabel.text = "Tap any tile to start!"
+       
+    }
+    
+   
 
     func updeteViewFromModel(){
         for index in buttonCollection.indices{
@@ -83,12 +128,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     
-   
     
    
     
     @IBAction func buttonAction(_ sender: UIButton) {
         touches += 1
+        if touches >= 1 && touches < 49{
+            touchLabel.textColor = #colorLiteral(red: 1, green: 0, blue: 0.9928097129, alpha: 1)
+        }
+        if touches >= 49 && touches < 85{
+            touchLabel.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        }
+        if touches >= 85 {
+            touchLabel.textColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        }
         if let buttonIndex = buttonCollection.firstIndex(of: sender){
             game.chooseCard(at: buttonIndex)
             updeteViewFromModel()
@@ -96,12 +149,6 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func resetButton(_ sender: UIButton) {
-        touches = 0
-        touchLabel.text = "Touches: \(touches)"
-        
-       
-    }
     
 }
 
