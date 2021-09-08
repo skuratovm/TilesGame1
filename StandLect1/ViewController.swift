@@ -66,8 +66,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-              // AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        self.view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        AudioServicesPlaySystemSound(1519)
+        self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
        
     }
@@ -189,10 +189,10 @@ class ViewController: UIViewController {
     
     
    
-    @IBAction func helpButtonAction(_ sender: UIButton) {
+   // @IBAction func helpButtonAction(_ sender: UIButton) {
         
-        game.openAll()
-    }
+     //   game.openAll()
+    //}
     
     @IBAction func buttonAction(_ sender: UIButton) {
         AudioServicesPlaySystemSound(1519)//(SystemSoundID(kSystemSoundID_Vibrate))
