@@ -189,10 +189,11 @@ class ViewController: UIViewController {
     
     
    
-   // @IBAction func helpButtonAction(_ sender: UIButton) {
-        
-     //   game.openAll()
-    //}
+    @IBAction func helpButtonAction(_ sender: UIButton) {
+        touchLabel.text = "Tap any tile to face up all cards"
+       game.openAll()
+    
+    }
     
     @IBAction func buttonAction(_ sender: UIButton) {
         AudioServicesPlaySystemSound(1519)//(SystemSoundID(kSystemSoundID_Vibrate))

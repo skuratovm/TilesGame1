@@ -36,6 +36,9 @@ class GameLogic {
     func openAll(){
         for i in cards.indices{
             cards[i].isFaceUp = true
+            cards[i].isMatched = true
+            
+            
         }
     }
     
