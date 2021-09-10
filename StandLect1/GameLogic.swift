@@ -42,6 +42,16 @@ class GameLogic {
         }
     }
     
+    func closeAll(){
+        for i in cards.indices{
+            cards[i].isFaceUp = false
+            cards[i].isMatched = false
+            
+            
+            
+        }
+    }
+    
     func resetGame(){
         
         for i in cards.indices{

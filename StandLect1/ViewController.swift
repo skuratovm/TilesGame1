@@ -8,17 +8,17 @@
 import UIKit
 import AudioToolbox
 
-extension UIButton {
-
-    func shake() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-//animation.timingFunction = CAMediaTimingFunction
-        animation.duration = 0.6
-        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-        layer.add(animation, forKey: "shake")
-    }
-
-}
+//extension UIButton {
+//
+//    func shake() {
+//        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+////animation.timingFunction = CAMediaTimingFunction
+//        animation.duration = 0.6
+//        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+//        layer.add(animation, forKey: "shake")
+//    }
+//
+//}
 
 //block of code to upgrade View Inspector
 
@@ -68,6 +68,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         AudioServicesPlaySystemSound(1519)
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        
         
        
     }
@@ -192,6 +194,11 @@ class ViewController: UIViewController {
     @IBAction func helpButtonAction(_ sender: UIButton) {
         touchLabel.text = "Tap any tile to face up all cards"
        game.openAll()
+        let seconds = 1.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            
+            self.game.closeAll()
+        }
     
     }
     
