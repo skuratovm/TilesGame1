@@ -68,6 +68,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         AudioServicesPlaySystemSound(1519)
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        let button2 = continueButtonCollection[0]
+        button2.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        
+        
+        
         
         
         
@@ -151,6 +156,10 @@ class ViewController: UIViewController {
 //
     }
     
+    func updateContinueButton(){
+       
+    }
+    
    
 
     func updeteViewFromModel(){
@@ -188,6 +197,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
+    @IBOutlet var continueButtonCollection: [UIButton]!
+    
     
     
    
@@ -201,6 +212,11 @@ class ViewController: UIViewController {
         }
     
     }
+    
+    @IBAction func continueButton(_ sender: UIButton) {
+        updateContinueButton()
+    }
+    
     
     @IBAction func buttonAction(_ sender: UIButton) {
         AudioServicesPlaySystemSound(1519)//(SystemSoundID(kSystemSoundID_Vibrate))

@@ -55,11 +55,16 @@ class GameLogic {
     func resetGame(){
         
         for i in cards.indices{
-            cards[i].isFaceUp = false
-            cards[i].isMatched = false
-           cards[i].identifier = 0
-            cards[i].identifier = Int(arc4random_uniform(12))
-            
+            let seconds = 1.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.cards[i].isFaceUp = false
+                self.cards[i].isMatched = false
+                         // cards[i].identifier = 0
+                self.cards[i].identifier = Int(arc4random_uniform(11))
+                self.onlyOneFaceUpCardIndex = nil
+               
+            }
+           
             
             
             

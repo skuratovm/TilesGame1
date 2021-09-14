@@ -404,6 +404,8 @@
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0j0-LJ-mbm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="194" id="FTs-5Q-UAF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="OI3-0E-tmz"/>
                                     <constraint firstAttribute="width" constant="194" id="h42-9A-pkl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
@@ -425,14 +427,43 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="krt-Sl-NKR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-xQ-OA9">
+                                <rect key="frame" x="110" y="790" width="194" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EaK-fZ-wQ0"/>
+                                    <constraint firstAttribute="width" constant="194" id="c7m-2f-3yn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lJh-Qv-oHL"/>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PCG-QF-uhE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ejk-2U-RQX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="2xz-Te-cq8"/>
                             <constraint firstItem="KfV-m3-GvE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Io-xb-hNj"/>
+                            <constraint firstItem="bB6-Y4-FA6" firstAttribute="top" secondItem="nGC-xQ-OA9" secondAttribute="bottom" constant="2" id="BdW-bV-cMa"/>
                             <constraint firstItem="0TI-Ig-y1B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="4" id="EEf-cJ-hQc"/>
                             <constraint firstItem="Ejk-2U-RQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="KAe-XW-skQ"/>
+                            <constraint firstItem="nGC-xQ-OA9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N4r-HP-zm4"/>
                             <constraint firstItem="KfV-m3-GvE" firstAttribute="top" secondItem="Ejk-2U-RQX" secondAttribute="bottom" constant="40" id="ThT-vP-94H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bB6-Y4-FA6" secondAttribute="bottom" constant="10" id="UkD-bl-x2x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ejk-2U-RQX" secondAttribute="trailing" constant="32" id="dua-ml-TvI"/>
@@ -467,6 +498,7 @@
                         <outletCollection property="buttonCollection" destination="Uaj-US-W41" collectionClass="NSMutableArray" id="XyF-AF-rQE"/>
                         <outletCollection property="buttonCollection" destination="4u4-gI-aoP" collectionClass="NSMutableArray" id="Qmb-hv-Vrk"/>
                         <outletCollection property="buttonCollection" destination="R9i-Oo-GK5" collectionClass="NSMutableArray" id="nGO-1i-2OO"/>
+                        <outletCollection property="continueButtonCollection" destination="nGC-xQ-OA9" collectionClass="NSMutableArray" id="dMg-Lr-7tf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
