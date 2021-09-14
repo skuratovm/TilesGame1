@@ -70,6 +70,11 @@ class ViewController: UIViewController {
         self.view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         let button2 = continueButtonCollection[0]
         button2.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        button2.setTitle("", for: .normal)
+        
+        
+        
+        
         
         
         
@@ -153,10 +158,20 @@ class ViewController: UIViewController {
             
             blurVisualEffectView.removeFromSuperview()
         }
+        let button2 = continueButtonCollection[0]
+        button2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
+        button2.setTitle("", for: .normal)
 //
     }
     
     func updateContinueButton(){
+       let  button2 = continueButtonCollection[0]
+        
+        button2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
+        button2.setTitle("", for: .normal)
+        
+        
+        
        
     }
     
@@ -205,16 +220,23 @@ class ViewController: UIViewController {
     @IBAction func helpButtonAction(_ sender: UIButton) {
         touchLabel.text = "Tap any tile to face up all cards"
        game.openAll()
-        let seconds = 1.0
+        let seconds = 5.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             
             self.game.closeAll()
         }
-    
+        let  button2 = continueButtonCollection[0]
+        button2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        button2.setTitle("Continue", for: .normal)
+        
     }
     
     @IBAction func continueButton(_ sender: UIButton) {
         updateContinueButton()
+        let button2 = continueButtonCollection[0]
+        button2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
+        button2.setTitle("", for: .normal)
+        
     }
     
     
