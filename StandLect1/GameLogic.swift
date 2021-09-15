@@ -8,8 +8,8 @@
 import Foundation
 
 class GameLogic {
-    var cards = [Card]()
-    var onlyOneFaceUpCardIndex: Int? {
+    private(set) var cards = [Card]()
+   private var onlyOneFaceUpCardIndex: Int? {
         get{
             var foundIndex: Int?
             for index in cards.indices{
