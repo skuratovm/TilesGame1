@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         
 
     }
-    var touches = 0{
+    private(set) var touches = 0{
         didSet{
             touchLabel.text = "Touches : \(touches)"
 
@@ -72,11 +72,11 @@ class ViewController: UIViewController {
     }
     
 
-    var emojiCollection = ["🐶","🐸","🦁","🦑","🦈","🐆","🦧","🦜","🐓","🐲","🐁","🐿","🐝","🪱","🐛","🦋","🐞","🐜","🪲","🐥","🐰","🦭","🦦"]
+   private var emojiCollection = ["🐶","🐸","🦁","🦑","🦈","🐆","🦧","🦜","🐓","🐲","🐁","🐿","🐝","🪱","🐛","🦋","🐞","🐜","🪲","🐥","🐰","🦭","🦦"]
     
-    var emojiDictionary = [Int: String]()
+   private var emojiDictionary = [Int: String]()
     
-    func emojiID(for card: Card) -> String{
+    private func emojiID(for card: Card) -> String{
         if emojiDictionary[card.identifier] == nil {
             let randomIndex = Int(arc4random_uniform(UInt32(emojiCollection.count)))
             emojiDictionary[card.identifier] = emojiCollection.remove(at: randomIndex)
@@ -170,12 +170,12 @@ class ViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var touchLabel: UILabel!
-    @IBOutlet var buttonCollection: [UIButton]!
+    @IBOutlet private weak var touchLabel: UILabel!
+    @IBOutlet private var buttonCollection: [UIButton]!
     
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet private weak var resultLabel: UILabel!
     
-    @IBOutlet var continueButtonCollection: [UIButton]!
+    @IBOutlet private var continueButtonCollection: [UIButton]!
     
     
     
