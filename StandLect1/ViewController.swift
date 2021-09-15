@@ -8,16 +8,7 @@
 import UIKit
 import AudioToolbox
 
-//extension UIButton {
-//
-//    func shake() {
-//        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-////animation.timingFunction = CAMediaTimingFunction
-//        animation.duration = 0.6
-//        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-//        layer.add(animation, forKey: "shake")
-//    }
-//
+
 
 
 //block of code to upgrade View Inspector
@@ -56,12 +47,11 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-   lazy var game = GameLogic(numberOfPairs: buttonCollection.count + 1 / 2)
+   lazy var game = GameLogic(numberOfPairs: numberOfPairs)
     
-    
-  
-    
-  
+    var numberOfPairs: Int{
+        buttonCollection.count + 1 / 2
+    }
     
     
     override func viewDidLoad() {
@@ -72,16 +62,7 @@ class ViewController: UIViewController {
         button2.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
         button2.setTitle("", for: .normal)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-       
+
     }
     var touches = 0{
         didSet{
@@ -90,26 +71,7 @@ class ViewController: UIViewController {
         }
     }
     
-   
-        
-    
-    
-        
-        //let buttonIndex1 = buttonCollection.
-//        if emojiCollection[0] == emojiCollection [2] && touches % 2 == 0{
-//            self.view.backgroundColor = UIColor.green
-//            resultLabel.text = "That's right !"
-//
-//        }else if emojiCollection[0] == emojiCollection [1] && touches % 2 == 0{
-//            self.view.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
-//            resultLabel.text = "Try again ☹️"
-//        }
-    
-    
-    
-    
-    
-    
+
     var emojiCollection = ["🐶","🐸","🦁","🦑","🦈","🐆","🦧","🦜","🐓","🐲","🐁","🐿","🐝","🪱","🐛","🦋","🐞","🐜","🪲","🐥","🐰","🦭","🦦"]
     
     var emojiDictionary = [Int: String]()
@@ -165,10 +127,11 @@ class ViewController: UIViewController {
     }
     
     func updateContinueButton(){
-       let  button2 = continueButtonCollection[0]
+       let  button4 = continueButtonCollection[0]
         
-        button2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
-        button2.setTitle("", for: .normal)
+        button4.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
+        button4.setTitle("", for: .normal)
+        
         
         
         
@@ -233,9 +196,10 @@ class ViewController: UIViewController {
     
     @IBAction func continueButton(_ sender: UIButton) {
         updateContinueButton()
-        let button2 = continueButtonCollection[0]
-        button2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
-        button2.setTitle("", for: .normal)
+        let button3 = continueButtonCollection[0]
+        button3.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0)
+        button3.setTitle("", for: .normal)
+        //game.closeAll()
         
     }
     

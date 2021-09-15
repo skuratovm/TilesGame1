@@ -427,8 +427,8 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="krt-Sl-NKR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-xQ-OA9">
-                                <rect key="frame" x="110" y="790" width="194" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-xQ-OA9">
+                                <rect key="frame" x="110" y="717" width="194" height="30"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EaK-fZ-wQ0"/>
@@ -460,7 +460,7 @@
                         <constraints>
                             <constraint firstItem="Ejk-2U-RQX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="2xz-Te-cq8"/>
                             <constraint firstItem="KfV-m3-GvE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Io-xb-hNj"/>
-                            <constraint firstItem="bB6-Y4-FA6" firstAttribute="top" secondItem="nGC-xQ-OA9" secondAttribute="bottom" constant="2" id="BdW-bV-cMa"/>
+                            <constraint firstItem="bB6-Y4-FA6" firstAttribute="top" secondItem="nGC-xQ-OA9" secondAttribute="bottom" constant="70" id="BdW-bV-cMa"/>
                             <constraint firstItem="0TI-Ig-y1B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="4" id="EEf-cJ-hQc"/>
                             <constraint firstItem="Ejk-2U-RQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="KAe-XW-skQ"/>
                             <constraint firstItem="nGC-xQ-OA9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N4r-HP-zm4"/>
