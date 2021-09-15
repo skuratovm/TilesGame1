@@ -47,7 +47,7 @@ import AudioToolbox
 
 class ViewController: UIViewController {
     
-   lazy var game = GameLogic(numberOfPairs: numberOfPairs)
+  private lazy var game = GameLogic(numberOfPairs: numberOfPairs)
     
     var numberOfPairs: Int{
         buttonCollection.count + 1 / 2
