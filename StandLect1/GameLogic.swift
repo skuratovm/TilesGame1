@@ -100,6 +100,7 @@ class GameLogic {
     }
     
     init(numberOfPairs: Int){
+        assert(numberOfPairs > 0,"numberOfPairs must be 1 at least")
         for _ in stride(from: 1, to: numberOfPairs,by: 1){
             let card = Card()
             cards.append(card)
