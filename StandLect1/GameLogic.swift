@@ -42,7 +42,7 @@ class GameLogic {
                 cards[index].isFaceUp = true
                 
             }else{
-                
+                 
                 onlyOneFaceUpCardIndex = index
             }
         }
