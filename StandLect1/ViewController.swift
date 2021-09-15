@@ -8,6 +8,12 @@
 import UIKit
 import AudioToolbox
 
+extension Int{
+    var arc4randomExtension: Int{
+        return Int(arc4random_uniform(UInt32(self)))
+    }
+}
+
 
 
 
@@ -78,8 +84,8 @@ class ViewController: UIViewController {
     
     private func emojiID(for card: Card) -> String{
         if emojiDictionary[card.identifier] == nil {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiCollection.count)))
-            emojiDictionary[card.identifier] = emojiCollection.remove(at: randomIndex)
+            
+            emojiDictionary[card.identifier] = emojiCollection.remove(at: emojiCollection.count.arc4randomExtension)
         }
         
         return emojiDictionary[card.identifier] ?? "?"
@@ -224,6 +230,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     
     
 }
