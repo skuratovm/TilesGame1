@@ -35,7 +35,7 @@ class GameLogic {
     func chooseCard(at index: Int){
         if !cards[index].isMatched{
             if let matchingIndex = onlyOneFaceUpCardIndex, matchingIndex != index{
-                if cards[matchingIndex].identifier == cards[index].identifier{
+                if cards[matchingIndex] == cards[index]{
                     cards[matchingIndex].isMatched = true
                     cards[index].isMatched = true
                 }
@@ -87,7 +87,7 @@ class GameLogic {
                 self.cards[i].isFaceUp = false
                 self.cards[i].isMatched = false
                          // cards[i].identifier = 0
-                self.cards[i].identifier = Int(arc4random_uniform(11))
+              
                 self.onlyOneFaceUpCardIndex = nil
                
             }
