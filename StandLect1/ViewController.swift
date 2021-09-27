@@ -84,14 +84,18 @@ class ViewController: UIViewController {
     }
     
 
-   private var emojiCollection = ["🐶","🐸","🦁","🦑","🦈","🐆","🦧","🦜","🐓","🐲","🐁","🐿","🐝","🪱","🐛","🦋","🐞","🐜","🪲","🐥","🐰","🦭","🦦"]
+//   private var emojiCollection = ["🐶","🐸","🦁","🦑","🦈","🐆","🦧","🦜","🐓","🐲","🐁","🐿","🐝","🪱","🐛","🦋","🐞","🐜","🪲","🐥","🐰","🦭","🦦"]
+    private var emojiCollection = "🐶🐸🦁🦑🦈🐆🦧🦜🐓🐲🐁🐿🐝🪱🐛🦋🐞🐜🪲🐥🐰🦭🦦"
+    
+    
     
    private var emojiDictionary = [Card: String]()
     
     private func emojiID(for card: Card) -> String{
         if emojiDictionary[card] == nil {
+            let stringIndex = emojiCollection.index(emojiCollection.startIndex, offsetBy: emojiCollection.count.arc4randomExtension)
             
-            emojiDictionary[card] = emojiCollection.remove(at: emojiCollection.count.arc4randomExtension)
+            emojiDictionary[card] = String(emojiCollection.remove(at: stringIndex))
         }
         
         return emojiDictionary[card] ?? "?"

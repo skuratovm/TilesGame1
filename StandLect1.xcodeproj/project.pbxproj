@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4017494626E5768D000395E7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4017494526E5768D000395E7 /* Card.swift */; };
 		4017494926E5770B000395E7 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4017494826E5770B000395E7 /* GameLogic.swift */; };
+		4038BE0A26FB552C00CD98AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4038BE0926FB552C00CD98AD /* HomeViewController.m */; };
+		4038BE0D26FB5B4800CD98AD /* SwiftHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4038BE0C26FB5B4800CD98AD /* SwiftHomeViewController.swift */; };
 		408CE94A26E259110079AC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408CE94926E259110079AC50 /* AppDelegate.swift */; };
 		408CE94C26E259120079AC50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408CE94B26E259110079AC50 /* SceneDelegate.swift */; };
 		408CE94E26E259120079AC50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408CE94D26E259120079AC50 /* ViewController.swift */; };
@@ -20,6 +22,10 @@
 /* Begin PBXFileReference section */
 		4017494526E5768D000395E7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4017494826E5770B000395E7 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		4038BE0726FB552B00CD98AD /* StandLect1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StandLect1-Bridging-Header.h"; sourceTree = "<group>"; };
+		4038BE0826FB552C00CD98AD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4038BE0926FB552C00CD98AD /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4038BE0C26FB5B4800CD98AD /* SwiftHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHomeViewController.swift; sourceTree = "<group>"; };
 		408CE94626E259110079AC50 /* StandLect1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandLect1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		408CE94926E259110079AC50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		408CE94B26E259110079AC50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +75,10 @@
 				408CE95726E259120079AC50 /* Info.plist */,
 				4017494526E5768D000395E7 /* Card.swift */,
 				4017494826E5770B000395E7 /* GameLogic.swift */,
+				4038BE0826FB552C00CD98AD /* HomeViewController.h */,
+				4038BE0926FB552C00CD98AD /* HomeViewController.m */,
+				4038BE0726FB552B00CD98AD /* StandLect1-Bridging-Header.h */,
+				4038BE0C26FB5B4800CD98AD /* SwiftHomeViewController.swift */,
 			);
 			path = StandLect1;
 			sourceTree = "<group>";
@@ -104,6 +114,7 @@
 				TargetAttributes = {
 					408CE94526E259110079AC50 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -147,7 +158,9 @@
 				408CE94A26E259110079AC50 /* AppDelegate.swift in Sources */,
 				408CE94C26E259120079AC50 /* SceneDelegate.swift in Sources */,
 				4017494926E5770B000395E7 /* GameLogic.swift in Sources */,
+				4038BE0D26FB5B4800CD98AD /* SwiftHomeViewController.swift in Sources */,
 				4017494626E5768D000395E7 /* Card.swift in Sources */,
+				4038BE0A26FB552C00CD98AD /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBAYZWJ286;
 				INFOPLIST_FILE = StandLect1/Info.plist;
@@ -303,6 +317,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ls4.StandLect1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StandLect1/StandLect1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KBAYZWJ286;
 				INFOPLIST_FILE = StandLect1/Info.plist;
@@ -322,6 +339,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ls4.StandLect1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StandLect1/StandLect1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

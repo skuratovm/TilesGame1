@@ -18,7 +18,7 @@ struct Card : Hashable{
     }
     var  isFaceUp = true
     var isMatched = false
-    var identifier: Int
+    private var identifier: Int
     
     private static var identifierNumber = 0
     private static func identifierNumberGeneration() -> Int{
