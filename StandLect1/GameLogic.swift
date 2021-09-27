@@ -11,17 +11,21 @@ class GameLogic {
     private(set) var cards = [Card]()
    private var onlyOneFaceUpCardIndex: Int? {
         get{
-            var foundIndex: Int?
-            for index in cards.indices{
-                if cards[index].isFaceUp {
-                    if foundIndex == nil{
-                        foundIndex = index
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            
+            let faceUpCardIndex = cards.indices.filter {cards[$0].isFaceUp }
+            return faceUpCardIndex.count == 1 ? faceUpCardIndex.first : nil
+            
+//            var foundIndex: Int?
+//            for index in cards.indices{
+//                if cards[index].isFaceUp {
+//                    if foundIndex == nil{
+//                        foundIndex = index
+//                    } else {
+//                        return nil
+//                    }
+//                }
+//            }
+//            return foundIndex
         }
         
         set{
