@@ -12,8 +12,8 @@ class GameLogic {
    private var onlyOneFaceUpCardIndex: Int? {
         get{
             
-            let faceUpCardIndex = cards.indices.filter {cards[$0].isFaceUp }
-            return faceUpCardIndex.count == 1 ? faceUpCardIndex.first : nil
+            return cards.indices.filter {cards[$0].isFaceUp }.oneAndOnly
+           
             
 //            var foundIndex: Int?
 //            for index in cards.indices{
@@ -110,5 +110,11 @@ class GameLogic {
             cards.append(card)
             cards.append(card)
         }
+    }
+}
+
+extension Collection {
+    var oneAndOnly :Element? {
+        return count == 1 ? first : nil
     }
 }
